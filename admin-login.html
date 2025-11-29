@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #c72092, #6c14d0);
+      }
+
+      .login-box {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .login-box h2 {
+        margin-bottom: 20px;
+        color: #333;
+        text-transform: uppercase;
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .input-group i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #c72092;
+      }
+      .input-group input {
+        width: 100%;
+        padding: 12px 15px 12px 40px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        outline: none;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+      .input-group input:focus {
+        border-color: #c72092;
+        box-shadow: 0 0 5px rgba(199, 32, 146, 0.3);
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(to right, #c72092, #6c14d0);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      button:hover {
+        transform: scale(1.03);
+      }
+
+      .error-msg {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+        display: none;
+      }
+      .back-link {
+        display: block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #666;
+        font-size: 14px;
+      }
+      .back-link:hover {
+        color: #c72092;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h2>Admin Panel</h2>
+      <form onsubmit="handleLogin(event)">
+        <div class="input-group">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" id="username" placeholder="Username" required />
+        </div>
+        <div class="input-group">
+          <i class="fa-solid fa-lock"></i>
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <button type="submit">LOGIN</button>
+        <p class="error-msg" id="errorMsg">Username or Password incorrect!</p>
+      </form>
+      <a href="index.html" class="back-link"
+        ><i class="fa-solid fa-arrow-left"></i> Back to Website</a
+      >
+    </div>
+
+    <script>
+      // Nếu đã đăng nhập rồi thì đá sang admin luôn
+      if (sessionStorage.getItem("adminLogged") === "true") {
+        window.location.href = "admin.html";
+      }
+
+      function handleLogin(e) {
+        e.preventDefault();
+        const user = document.getElementById("username").value;
+        const pass = document.getElementById("password").value;
+        const errorMsg = document.getElementById("errorMsg");
+
+        // TÀI KHOẢN: admin / admin123
+        if (user === "admin" && pass === "admin123") {
+          sessionStorage.setItem("adminLogged", "true");
+          window.location.href = "admin.html";
+        } else {
+          errorMsg.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>

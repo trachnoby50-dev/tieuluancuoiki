@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nike Thái Trạch</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <section>
+      <nav>
+        <div class="logo">
+          <img
+            src="image/logo.png"
+            alt="Logo Shop"
+            onerror="this.src='https://cdn-icons-png.flaticon.com/512/732/732200.png'"
+          />
+          <h1>Thái Trạch<span>sport</span></h1>
+        </div>
+
+        <ul>
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#Products">Products</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Review">Review</a></li>
+          <li><a href="#Services">Services</a></li>
+        </ul>
+
+        <div class="icons">
+          <i class="fa-solid fa-heart"></i>
+
+          <div class="cart-icon-container" onclick="toggleCart()">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cartCount">0</span>
+          </div>
+
+          <a href="register.html" title="Create Account">
+            <i class="fa-solid fa-user-plus"></i>
+          </a>
+
+          <a href="admin-login.html" title="Admin Login">
+            <i class="fa-solid fa-user-gear"></i>
+          </a>
+
+          <a href="#" class="user-avatar" title="User Profile">
+            <img
+              src="image/man1.jpg"
+              alt="User Avatar"
+              onerror="this.src='image/man3.jpg'"
+            />
+          </a>
+        </div>
+      </nav>
+
+      <div class="main" id="Home">
+        <div class="main_content">
+          <div class="main_text">
+            <h1>NIKE<br /><span>Thái Trạch</span></h1>
+            <p>
+              Trúc xinh trúc mọc đầu đình. Giày xinh giày, giày đẹp phải có
+              người rinh.
+            </p>
+          </div>
+          <div class="main_image">
+            <img src="image/shoes.png" alt="Nike Shoe Hero" />
+          </div>
+        </div>
+        <div class="button">
+          <a href="#Products">SHOP NOW</a>
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </div>
+    </section>
+
+    <div class="products" id="Products">
+      <h1>Products</h1>
+
+      <div class="search-container">
+        <div style="position: relative; display: inline-block">
+          <input
+            type="text"
+            id="searchInput"
+            onkeyup="searchProducts()"
+            placeholder="Search shoes..."
+          />
+          <i
+            class="fa-solid fa-magnifying-glass"
+            style="position: absolute; right: 15px; top: 12px; color: #c72092"
+          ></i>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="card">
+          <div class="image">
+            <img src="image/shoes1.png" alt="Nike Air 1" />
+          </div>
+          <div class="products_text">
+            <h2>NIKE Air Red</h2>
+            <h3>$100.00</h3>
+            <div class="size-container">
+              <label>Size:</label>
+              <select id="size-1" class="size-option">
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+              </select>
+            </div>
+            <button
+              class="btn"
+              onclick="addToCart('NIKE Air Red', 100.00, 'image/shoes1.png', 'size-1')"
+            >
+              Add To Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image">
+            <img src="image/shoes2.png" alt="Nike Air Blue" />
+          </div>
+          <div class="products_text">
+            <h2>NIKE Air Blue</h2>
+            <h3>$150.00</h3>
+            <div class="size-container">
+              <label>Size:</label>
+              <select id="size-2" class="size-option">
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+              </select>
+            </div>
+            <button
+              class="btn"
+              onclick="addToCart('NIKE Air Blue', 150.00, 'image/shoes2.png', 'size-2')"
+            >
+              Add To Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image">
+            <img src="image/shoes3.png" alt="Nike Jordan" />
+          </div>
+          <div class="products_text">
+            <h2>NIKE Jordan</h2>
+            <h3>$200.00</h3>
+            <div class="size-container">
+              <label>Size:</label>
+              <select id="size-3" class="size-option">
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+              </select>
+            </div>
+            <button
+              class="btn"
+              onclick="addToCart('NIKE Jordan', 200.00, 'image/shoes3.png', 'size-3')"
+            >
+              Add To Cart
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="image">
+            <img src="image/shoes4.png" alt="Nike Green" />
+          </div>
+          <div class="products_text">
+            <h2>NIKE Green</h2>
+            <h3>$120.00</h3>
+            <div class="size-container">
+              <label>Size:</label>
+              <select id="size-4" class="size-option">
+                <option value="39">39</option>
+                <option value="40">40</option>
+                <option value="41">41</option>
+                <option value="42">42</option>
+              </select>
+            </div>
+            <button
+              class="btn"
+              onclick="addToCart('NIKE Green', 120.00, 'image/shoes4.png', 'size-4')"
+            >
+              Add To Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="services" id="Services">
+      <h1>Our<span>Services</span></h1>
+      <div class="services_cards">
+        <div class="services_box">
+          <i class="fa-solid fa-truck-fast"></i>
+          <h3>Fast Delivery</h3>
+          <p>Giao hàng siêu tốc trong vòng 24h nội thành.</p>
+        </div>
+        <div class="services_box">
+          <i class="fa-solid fa-rotate-left"></i>
+          <h3>10 Days Replacement</h3>
+          <p>Đổi trả miễn phí trong 10 ngày nếu có lỗi.</p>
+        </div>
+        <div class="services_box">
+          <i class="fa-solid fa-headset"></i>
+          <h3>24 x 7 Support</h3>
+          <p>Hỗ trợ khách hàng mọi lúc, giải đáp mọi thắc mắc.</p>
+        </div>
+        <div class="services_box">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Secure Payment</h3>
+          <p>Thanh toán bảo mật tuyệt đối 100%.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about" id="About">
+      <h1>Web<span>About</span></h1>
+      <div class="about_main">
+        <div class="about_image">
+          <div class="image_contaner">
+            <img src="image/red_shoes1.png" id="imagebox" />
+          </div>
+        </div>
+        <div class="about_text">
+          <p>
+            Trong tiếng Anh, sneaker là từ đồng nghĩa với giày thể thao, gọi
+            chung cho các loại giày được thiết kế với mục đích thể thao hoặc
+            hoạt động vui chơi ngoài trời...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="review" id="Review">
+      <h1>Customer's<span>Review</span></h1>
+      <div class="review_box" id="reviewContainer">
+        <div class="review_card">
+          <div class="card_top">
+            <div class="profile">
+              <div class="profile_image">
+                <img src="image/man2.jpg" onerror="this.src='image/man2.jpg'" />
+              </div>
+              <div class="name">
+                <strong>Nguyen Van A</strong>
+                <div class="like" style="color: orange">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="comment">
+            <p>Great shoes! Very comfortable and fast delivery.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="write-review">
+        <h2>Write a Review</h2>
+        <form onsubmit="handleReview(event)">
+          <div class="input-group">
+            <input
+              type="text"
+              id="reviewName"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <select id="reviewRating">
+              <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+              <option value="4">⭐⭐⭐⭐ (Good)</option>
+              <option value="3">⭐⭐⭐ (Average)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <textarea
+              id="reviewText"
+              placeholder="Share your thoughts..."
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Submit Review</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>Your Cart</h2>
+        <span class="close-cart" onclick="toggleCart()">&times;</span>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="total-price">Total: $<span id="cartTotal">0.00</span></div>
+        <a href="payment.html" class="checkout-btn">Checkout Now</a>
+      </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

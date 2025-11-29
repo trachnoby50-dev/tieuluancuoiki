@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Nike</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+    <style>
+        /* --- CSS GIAO DIỆN HIỆN ĐẠI --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Màu nền Gradient tím hồng đồng bộ với Admin */
+            background: linear-gradient(135deg, #c72092, #6c14d0);
+        }
+
+        /* Khung đăng ký */
+        .register-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            position: relative;
+        }
+
+        .register-box h2 {
+            margin-bottom: 5px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .register-box p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        /* Ô nhập liệu */
+        .input-group {
+            margin-bottom: 15px;
+            position: relative;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+            margin-left: 5px;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 38px; /* Căn chỉnh icon cho khớp */
+            color: #c72092;
+            font-size: 14px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px 12px 40px; /* Chừa khoảng trống bên trái cho icon */
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s;
+            background: #f9f9f9;
+        }
+
+        .input-group input:focus {
+            border-color: #c72092;
+            background: #fff;
+            box-shadow: 0 0 5px rgba(199, 32, 146, 0.2);
+        }
+
+        /* Nút Đăng ký */
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(to right, #c72092, #6c14d0);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 20, 208, 0.4);
+        }
+
+        /* Link chuyển hướng */
+        .login-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .login-link a {
+            color: #c72092;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .login-link a:hover { text-decoration: underline; }
+
+        /* Nút quay lại trang chủ góc trái */
+        .back-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: #999;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+        .back-home:hover { color: #c72092; }
+
+    </style>
+</head>
+<body>
+
+    <div class="register-box">
+        <a href="index.html" class="back-home" title="Back to Home"><i class="fa-solid fa-arrow-left"></i></a>
+
+        <h2>Create Account</h2>
+        <p>Join us to get the latest updates & offers!</p>
+
+        <form onsubmit="handleRegister(event)">
+            <div class="input-group">
+                <label>User Name</label>
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="regName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email Address</label>
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="regEmail" placeholder="Enter your email" required>
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="regPass" placeholder="Create password" required>
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="regConfirmPass" placeholder="Repeat password" required>
+            </div>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="login-link">
+            Already have an account? <a href="index.html">Login here</a>
+        </div>
+    </div>
+
+    <script>
+        function handleRegister(e) {
+            e.preventDefault(); // Chặn tải lại trang
+
+            // 1. Lấy dữ liệu
+            const name = document.getElementById("regName").value;
+            const email = document.getElementById("regEmail").value;
+            const pass = document.getElementById("regPass").value;
+            const confirmPass = document.getElementById("regConfirmPass").value;
+
+            // 2. Validate mật khẩu
+            if (pass.length < 6) {
+                alert("Password must be at least 6 characters!");
+                return;
+            }
+
+            if (pass !== confirmPass) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // 3. Lưu thông tin (Giả lập)
+            const newUser = {
+                name: name,
+                email: email,
+                password: pass
+            };
+
+            // Lưu vào LocalStorage (Có thể dùng để hiển thị tên user sau này)
+            localStorage.setItem("userAccount", JSON.stringify(newUser));
+
+            // 4. Thông báo & Chuyển hướng
+            alert("Registration Successful! Welcome, " + name);
+            window.location.href = "index.html"; // Quay về trang chủ để mua hàng
+        }
+    </script>
+
+</body>
+</html>
