@@ -2,9 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nike Thái Trạch</title>
+    <title>Nike - Just Do It</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="image/logo.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -14,12 +16,7 @@
     <section>
       <nav>
         <div class="logo">
-          <img
-            src="image/logo.png"
-            alt="Logo Shop"
-            onerror="this.src='https://cdn-icons-png.flaticon.com/512/732/732200.png'"
-          />
-          <h1>Thái Trạch<span>sport</span></h1>
+          <h1>Shoe<span>s</span></h1>
         </div>
 
         <ul>
@@ -32,37 +29,21 @@
 
         <div class="icons">
           <i class="fa-solid fa-heart"></i>
-
           <div class="cart-icon-container" onclick="toggleCart()">
             <i class="fa-solid fa-cart-shopping"></i>
             <span id="cartCount">0</span>
           </div>
-
-          <a href="register.html" title="Create Account">
-            <i class="fa-solid fa-user-plus"></i>
-          </a>
-
-          <a href="admin-login.html" title="Admin Login">
-            <i class="fa-solid fa-user-gear"></i>
-          </a>
-
-          <a href="#" class="user-avatar" title="User Profile">
-            <img
-              src="image/man1.jpg"
-              alt="User Avatar"
-              onerror="this.src='image/man3.jpg'"
-            />
-          </a>
+          <i class="fa-solid fa-user"></i>
         </div>
       </nav>
 
       <div class="main" id="Home">
         <div class="main_content">
           <div class="main_text">
-            <h1>NIKE<br /><span>Thái Trạch</span></h1>
+            <h1>NIKE<br /><span>Collection</span></h1>
             <p>
-              Trúc xinh trúc mọc đầu đình. Giày xinh giày, giày đẹp phải có
-              người rinh.
+              Discover the latest Nike collection. Designed for comfort, styled
+              for you. Just Do It.
             </p>
           </div>
           <div class="main_image">
@@ -78,22 +59,6 @@
 
     <div class="products" id="Products">
       <h1>Products</h1>
-
-      <div class="search-container">
-        <div style="position: relative; display: inline-block">
-          <input
-            type="text"
-            id="searchInput"
-            onkeyup="searchProducts()"
-            placeholder="Search shoes..."
-          />
-          <i
-            class="fa-solid fa-magnifying-glass"
-            style="position: absolute; right: 15px; top: 12px; color: #c72092"
-          ></i>
-        </div>
-      </div>
-
       <div class="box">
         <div class="card">
           <div class="image">
@@ -102,18 +67,9 @@
           <div class="products_text">
             <h2>NIKE Air Red</h2>
             <h3>$100.00</h3>
-            <div class="size-container">
-              <label>Size:</label>
-              <select id="size-1" class="size-option">
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-              </select>
-            </div>
             <button
               class="btn"
-              onclick="addToCart('NIKE Air Red', 100.00, 'image/shoes1.png', 'size-1')"
+              onclick="addToCart('NIKE Air Red', 100.00, 'image/shoes1.png')"
             >
               Add To Cart
             </button>
@@ -127,18 +83,9 @@
           <div class="products_text">
             <h2>NIKE Air Blue</h2>
             <h3>$150.00</h3>
-            <div class="size-container">
-              <label>Size:</label>
-              <select id="size-2" class="size-option">
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-              </select>
-            </div>
             <button
               class="btn"
-              onclick="addToCart('NIKE Air Blue', 150.00, 'image/shoes2.png', 'size-2')"
+              onclick="addToCart('NIKE Air Blue', 150.00, 'image/shoes2.png')"
             >
               Add To Cart
             </button>
@@ -152,18 +99,9 @@
           <div class="products_text">
             <h2>NIKE Jordan</h2>
             <h3>$200.00</h3>
-            <div class="size-container">
-              <label>Size:</label>
-              <select id="size-3" class="size-option">
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-              </select>
-            </div>
             <button
               class="btn"
-              onclick="addToCart('NIKE Jordan', 200.00, 'image/shoes3.png', 'size-3')"
+              onclick="addToCart('NIKE Jordan', 200.00, 'image/shoes3.png')"
             >
               Add To Cart
             </button>
@@ -177,22 +115,32 @@
           <div class="products_text">
             <h2>NIKE Green</h2>
             <h3>$120.00</h3>
-            <div class="size-container">
-              <label>Size:</label>
-              <select id="size-4" class="size-option">
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-              </select>
-            </div>
             <button
               class="btn"
-              onclick="addToCart('NIKE Green', 120.00, 'image/shoes4.png', 'size-4')"
+              onclick="addToCart('NIKE Green', 120.00, 'image/shoes4.png')"
             >
               Add To Cart
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about" id="About">
+      <h1>Web<span>About</span></h1>
+      <div class="about_main">
+        <div class="about_image">
+          <div class="image_contaner">
+            <img src="image/red_shoes1.png" id="imagebox" alt="Main Shoe" />
+          </div>
+        </div>
+        <div class="about_text">
+          <p>
+            Nike, Inc. is an American multinational corporation that is engaged
+            in the design, development, manufacturing, and worldwide marketing
+            and sales of footwear, apparel, equipment, accessories, and
+            services.
+          </p>
         </div>
       </div>
     </div>
@@ -203,101 +151,58 @@
         <div class="services_box">
           <i class="fa-solid fa-truck-fast"></i>
           <h3>Fast Delivery</h3>
-          <p>Giao hàng siêu tốc trong vòng 24h nội thành.</p>
         </div>
         <div class="services_box">
           <i class="fa-solid fa-rotate-left"></i>
           <h3>10 Days Replacement</h3>
-          <p>Đổi trả miễn phí trong 10 ngày nếu có lỗi.</p>
         </div>
         <div class="services_box">
           <i class="fa-solid fa-headset"></i>
           <h3>24 x 7 Support</h3>
-          <p>Hỗ trợ khách hàng mọi lúc, giải đáp mọi thắc mắc.</p>
-        </div>
-        <div class="services_box">
-          <i class="fa-solid fa-shield-halved"></i>
-          <h3>Secure Payment</h3>
-          <p>Thanh toán bảo mật tuyệt đối 100%.</p>
         </div>
       </div>
     </div>
 
-    <div class="about" id="About">
-      <h1>Web<span>About</span></h1>
-      <div class="about_main">
-        <div class="about_image">
-          <div class="image_contaner">
-            <img src="image/red_shoes1.png" id="imagebox" />
-          </div>
-        </div>
-        <div class="about_text">
-          <p>
-            Trong tiếng Anh, sneaker là từ đồng nghĩa với giày thể thao, gọi
-            chung cho các loại giày được thiết kế với mục đích thể thao hoặc
-            hoạt động vui chơi ngoài trời...
-          </p>
-        </div>
+    <div class="login_form">
+      <div class="left">
+        <img src="image/logshoes.png" alt="Login Image" />
       </div>
-    </div>
-
-    <div class="review" id="Review">
-      <h1>Customer's<span>Review</span></h1>
-      <div class="review_box" id="reviewContainer">
-        <div class="review_card">
-          <div class="card_top">
-            <div class="profile">
-              <div class="profile_image">
-                <img src="image/man2.jpg" onerror="this.src='image/man2.jpg'" />
-              </div>
-              <div class="name">
-                <strong>Nguyen Van A</strong>
-                <div class="like" style="color: orange">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="comment">
-            <p>Great shoes! Very comfortable and fast delivery.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="write-review">
-        <h2>Write a Review</h2>
-        <form onsubmit="handleReview(event)">
-          <div class="input-group">
+      <div class="right">
+        <h1>Welcome Back!</h1>
+        <form action="#" method="post">
+          <p>User Name</p>
+          <div class="user">
+            <i class="fa-solid fa-user"></i>
             <input
               type="text"
-              id="reviewName"
-              placeholder="Your Name"
-              required
+              name="user"
+              placeholder="User Name"
+              class="username"
             />
           </div>
-          <div class="input-group">
-            <select id="reviewRating">
-              <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
-              <option value="4">⭐⭐⭐⭐ (Good)</option>
-              <option value="3">⭐⭐⭐ (Average)</option>
-            </select>
+          <p class="passworg_tag">Password</p>
+          <div class="password">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" name="password" placeholder="Password" />
           </div>
-          <div class="input-group">
-            <textarea
-              id="reviewText"
-              placeholder="Share your thoughts..."
-              rows="3"
-              required
-            ></textarea>
-          </div>
-          <button type="submit">Submit Review</button>
-        </form>
+         <button type="submit">Login</button>
+
+<p style="text-align: center; margin-top: 15px; font-size: 14px;">
+    Don't have an account? <a href="register.html" style="color: #c72092; font-weight: bold;">Sign Up</a>
+</p>
+<div class="loging_icon">
+   ...
+</div>
+
+    <footer>
+      <div class="footer_main">
+        <div class="tag">
+          <h1>Contact</h1>
+          <a href="#"><i class="fa-solid fa-phone"></i> +84 123 456 789</a>
+          <a href="#"><i class="fa-solid fa-envelope"></i> contact@nike.com</a>
+        </div>
       </div>
-    </div>
+    </footer>
 
     <div class="cart-sidebar" id="cartSidebar">
       <div class="cart-header">
@@ -312,6 +217,74 @@
     </div>
     <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 
-    <script src="script.js"></script>
+    <script>
+      // 1. Khởi tạo giỏ hàng từ LocalStorage
+      let cart = JSON.parse(localStorage.getItem("myCart")) || [];
+      updateCartUI();
+
+      // 2. Hàm thêm vào giỏ
+      function addToCart(name, price, image) {
+        let existingItem = cart.find((item) => item.name === name);
+        if (existingItem) {
+          existingItem.quantity++;
+        } else {
+          cart.push({ name: name, price: price, image: image, quantity: 1 });
+        }
+        updateCartUI();
+        openCart();
+      }
+
+      // 3. Hàm cập nhật giao diện
+      function updateCartUI() {
+        const cartItemsEl = document.getElementById("cartItems");
+        const cartTotalEl = document.getElementById("cartTotal");
+        const cartCountEl = document.getElementById("cartCount");
+
+        cartItemsEl.innerHTML = "";
+        let total = 0;
+        let count = 0;
+
+        cart.forEach((item, index) => {
+          total += item.price * item.quantity;
+          count += item.quantity;
+          cartItemsEl.innerHTML += `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}">
+                        <div class="item-details">
+                            <h4>${item.name}</h4>
+                            <p>$${item.price} x ${item.quantity}</p>
+                        </div>
+                        <i class="fa-solid fa-trash remove-btn" onclick="removeItem(${index})"></i>
+                    </div>
+                `;
+        });
+
+        cartTotalEl.innerText = total.toFixed(2);
+        cartCountEl.innerText = count;
+
+        // Lưu dữ liệu mới
+        localStorage.setItem("myCart", JSON.stringify(cart));
+        localStorage.setItem("cartTotal", total.toFixed(2));
+      }
+
+      // 4. Hàm xóa sản phẩm
+      function removeItem(index) {
+        cart.splice(index, 1);
+        updateCartUI();
+      }
+
+      // 5. Hàm đóng mở Sidebar
+      function toggleCart() {
+        const sidebar = document.getElementById("cartSidebar");
+        const overlay = document.getElementById("cartOverlay");
+        sidebar.classList.toggle("active");
+        overlay.classList.toggle("active");
+      }
+
+      function openCart() {
+        document.getElementById("cartSidebar").classList.add("active");
+        document.getElementById("cartOverlay").classList.add("active");
+      }
+    </script>
   </body>
 </html>
